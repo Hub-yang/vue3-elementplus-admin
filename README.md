@@ -1,1 +1,1 @@
-<p align="center">一键游-市场分析引导系统</p>
+<p align="center">后管通用开发框架</p>
