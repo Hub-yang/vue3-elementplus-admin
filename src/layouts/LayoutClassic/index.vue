@@ -1,13 +1,7 @@
 <!-- 经典布局 -->
 <script setup lang="ts" name="layoutClassic">
-import { computed } from 'vue'
-import { useRoute } from 'vue-router'
 import { useAuthStore } from '@/stores/modules/auth'
 import { useGlobalStore } from '@/stores/modules/global'
-import Main from '@/layouts/components/Main/index.vue'
-import SubMenu from '@/layouts/components/Menu/SubMenu.vue'
-import ToolBarLeft from '@/layouts/components/Header/ToolBarLeft.vue'
-import ToolBarRight from '@/layouts/components/Header/ToolBarRight.vue'
 
 const title = import.meta.env.VITE_GLOB_APP_TITLE
 
@@ -58,5 +52,64 @@ const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu
 </template>
 
 <style scoped lang="scss">
-@import "./index.scss";
+.el-container {
+  width: 100%;
+  height: 100%;
+  :deep(.el-header) {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 55px;
+    padding: 0 15px 0 0;
+    background-color: var(--el-header-bg-color);
+    border-bottom: 1px solid var(--el-header-border-color);
+    .header-lf {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      white-space: nowrap;
+      .logo {
+        flex-shrink: 0;
+        width: 210px;
+        margin-right: 16px;
+        .logo-img {
+          width: 28px;
+          margin-right: 6px;
+          object-fit: contain;
+        }
+        .logo-text {
+          font-size: 21.5px;
+          font-weight: bold;
+          color: var(--el-header-logo-text-color);
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .classic-content {
+    display: flex;
+    height: calc(100% - 55px);
+    :deep(.el-aside) {
+      width: auto;
+      background-color: var(--el-menu-bg-color);
+      border-right: 1px solid var(--el-aside-border-color);
+      .aside-box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: width 0.3s ease;
+        .el-menu {
+          width: 100%;
+          overflow-x: hidden;
+          border-right: none;
+        }
+      }
+    }
+    .classic-main {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
 </style>

@@ -1,10 +1,7 @@
 <!-- 💥 这里是异步加载 LayoutComponents -->
 <script setup lang="ts" name="layoutAsync">
-import { type Component, computed, defineAsyncComponent } from 'vue'
-import ThemeDrawer from './components/ThemeDrawer/index.vue'
 import type { LayoutType } from '@/stores/interface'
 import { useGlobalStore } from '@/stores/modules/global'
-import Loading from '@/components/Loading/index.vue'
 
 const LayoutComponents: Record<LayoutType, Component> = {
   vertical: defineAsyncComponent(() => import('./LayoutVertical/index.vue')),

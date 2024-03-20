@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia'
 import type { KeepAliveState } from '@/stores/interface'
 
 export const useKeepAliveStore = defineStore({

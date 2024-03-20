@@ -1,5 +1,4 @@
 <script setup lang="ts" name="WangEditor">
-import { computed, inject, nextTick, onBeforeUnmount, shallowRef } from 'vue'
 import type { IEditorConfig, IToolbarConfig } from '@wangeditor/editor'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import { formContextKey, formItemContextKey } from 'element-plus'
@@ -162,5 +161,32 @@ defineExpose({
 </template>
 
 <style scoped lang="scss">
-@import "./index.scss";
+/* 富文本组件校验失败样式 */
+.is-error {
+  .editor-box {
+    border-color: var(--el-color-danger);
+    .editor-toolbar {
+      border-bottom-color: var(--el-color-danger);
+    }
+  }
+}
+
+/* 富文本组件禁用样式 */
+.editor-disabled {
+  cursor: not-allowed !important;
+}
+
+/* 富文本组件样式 */
+.editor-box {
+  /* 防止富文本编辑器全屏时 tabs组件 在其层级之上 */
+  z-index: 2;
+  width: 100%;
+  border: 1px solid var(--el-border-color-darker);
+  .editor-toolbar {
+    border-bottom: 1px solid var(--el-border-color-darker);
+  }
+  .editor-content {
+    overflow-y: hidden;
+  }
+}
 </style>

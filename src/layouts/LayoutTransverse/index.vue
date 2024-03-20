@@ -1,11 +1,6 @@
 <!-- 横向布局 -->
 <script setup lang="ts" name="layoutTransverse">
-import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/modules/auth'
-import Main from '@/layouts/components/Main/index.vue'
-import ToolBarRight from '@/layouts/components/Header/ToolBarRight.vue'
-import SubMenu from '@/layouts/components/Menu/SubMenu.vue'
 
 const title = import.meta.env.VITE_GLOB_APP_TITLE
 
@@ -58,5 +53,64 @@ function handleClickMenu(subItem: Menu.MenuOptions) {
 </template>
 
 <style scoped lang="scss">
-@import "./index.scss";
+.el-container {
+  width: 100%;
+  height: 100%;
+  :deep(.el-header) {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 55px;
+    padding: 0 15px 0 0;
+    background-color: var(--el-header-bg-color);
+    border-bottom: 1px solid var(--el-header-border-color);
+    .logo {
+      width: 210px;
+      margin-right: 30px;
+      .logo-img {
+        width: 28px;
+        margin-right: 6px;
+        object-fit: contain;
+      }
+      .logo-text {
+        font-size: 21.5px;
+        font-weight: bold;
+        color: var(--el-header-logo-text-color);
+        white-space: nowrap;
+      }
+    }
+    .el-menu {
+      flex: 1;
+      height: 100%;
+      overflow: hidden;
+      border-bottom: none;
+      .el-sub-menu__hide-arrow {
+        width: 65px;
+        height: 55px;
+      }
+      .el-menu-item.is-active {
+        color: #ffffff !important;
+      }
+      .is-active {
+        background-color: var(--el-color-primary) !important;
+        border-bottom-color: var(--el-color-primary) !important;
+        &::before {
+          width: 0;
+        }
+        .el-sub-menu__title {
+          color: #ffffff !important;
+          background-color: var(--el-color-primary) !important;
+          border-bottom-color: var(--el-color-primary) !important;
+        }
+      }
+    }
+  }
+
+  @media screen and (width <= 730px) {
+    .logo {
+      display: none !important;
+    }
+  }
+}
 </style>

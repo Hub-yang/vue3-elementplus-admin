@@ -1,12 +1,6 @@
 <script setup lang="ts">
-import { h, onBeforeUnmount, provide, ref, watch } from 'vue'
-import { storeToRefs } from 'pinia'
-import { useDebounceFn } from '@vueuse/core'
-import Maximize from './components/Maximize.vue'
 import { useGlobalStore } from '@/stores/modules/global'
 import { useKeepAliveStore } from '@/stores/modules/keepAlive'
-import Tabs from '@/layouts/components/Tabs/index.vue'
-import Footer from '@/layouts/components/Footer/index.vue'
 
 const globalStore = useGlobalStore()
 const { maximize, isCollapse, layout, tabs, footer } = storeToRefs(globalStore)
@@ -88,5 +82,14 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="scss">
-@import "./index.scss";
+.el-main {
+  box-sizing: border-box;
+  padding: 10px 12px;
+  overflow-x: hidden;
+  background-color: var(--el-bg-color-page);
+}
+.el-footer {
+  height: auto;
+  padding: 0;
+}
 </style>

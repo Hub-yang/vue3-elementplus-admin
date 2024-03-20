@@ -1,19 +1,13 @@
 <!-- 📚📚📚 Pro-Table 文档: https://juejin.cn/post/7166068828202336263 -->
 
 <script setup lang="ts" name="ProTable">
-import { computed, onMounted, provide, reactive, ref, unref, watch } from 'vue'
 import { ElTable } from 'element-plus'
 import { Operation, Refresh, Search } from '@element-plus/icons-vue'
 import Sortable from 'sortablejs'
-import Pagination from './components/Pagination.vue'
-import ColSetting from './components/ColSetting.vue'
-import TableColumn from './components/TableColumn.vue'
 import { useTable } from '@/hooks/useTable'
 import { useSelection } from '@/hooks/useSelection'
 import type { BreakPoint } from '@/components/Grid/interface'
 import type { ColumnProps, TypeProps } from '@/components/ProTable/interface'
-import { handleProp } from '@/utils'
-import SearchForm from '@/components/SearchForm/index.vue'
 
 export interface ProTableProps {
   columns: ColumnProps[] // 列配置项  ==> 必传

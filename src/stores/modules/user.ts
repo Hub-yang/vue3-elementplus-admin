@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia'
 import type { UserState } from '@/stores/interface'
 import piniaPersistConfig from '@/stores/helper/persist'
 

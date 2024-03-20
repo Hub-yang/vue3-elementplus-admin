@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed, reactive } from 'vue'
 import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import { useTheme } from '@/hooks/useTheme'

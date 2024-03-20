@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import Sortable from 'sortablejs'
-import { computed, onMounted, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
 import type { TabPaneName, TabsPaneContext } from 'element-plus'
-import MoreButton from './components/MoreButton.vue'
 import { useGlobalStore } from '@/stores/modules/global'
 import { useTabsStore } from '@/stores/modules/tabs'
 import { useAuthStore } from '@/stores/modules/auth'

@@ -1,8 +1,5 @@
 <script setup lang="ts" name="UploadImg">
-import { computed, inject, ref } from 'vue'
-import { ElNotification, formContextKey, formItemContextKey } from 'element-plus'
-import type { UploadProps, UploadRequestOptions } from 'element-plus'
-import { generateUUID } from '@/utils'
+import { ElNotification, type UploadProps, type UploadRequestOptions, formContextKey, formItemContextKey } from 'element-plus'
 import { uploadImg } from '@/api/modules/upload'
 
 interface UploadFileProps {

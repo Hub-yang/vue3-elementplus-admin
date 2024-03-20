@@ -8,6 +8,8 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import viteCompression from 'vite-plugin-compression'
 import vueSetupExtend from 'unplugin-vue-setup-extend-plus/vite'
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 
 /**
  * 创建 vite 插件
@@ -19,6 +21,29 @@ export function createVitePlugins(viteEnv: ViteEnv): (PluginOption | PluginOptio
     vue(),
     // vue 可以使用 jsx/tsx 语法
     vueJsx(),
+    AutoImport({
+      imports: [
+        'vue',
+        '@vueuse/core',
+        'pinia',
+        'vue-router',
+      ],
+      dts: true,
+      dirs: [
+        './src/utils',
+      ],
+      vueTemplate: true,
+    }),
+
+    // https://github.com/antfu/vite-plugin-components
+    Components({
+      dts: true,
+      deep: true,
+      dirs: [
+        './src/layouts',
+        './src/components',
+      ],
+    }),
     // name 可以写在 script 标签上
     vueSetupExtend({}),
     // 创建打包压缩配置

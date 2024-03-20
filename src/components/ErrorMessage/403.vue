@@ -1,6 +1,4 @@
 <script setup lang="ts" name="403">
-import { useRouter } from 'vue-router'
-
 const router = useRouter()
 </script>
 

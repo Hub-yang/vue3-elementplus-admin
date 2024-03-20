@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, ref } from 'vue'
 import { Search } from '@element-plus/icons-vue'
-import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/modules/auth'
 
 const router = useRouter()

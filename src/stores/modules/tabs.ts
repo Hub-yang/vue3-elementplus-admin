@@ -1,7 +1,5 @@
-import { defineStore } from 'pinia'
 import { useKeepAliveStore } from './keepAlive'
 import router from '@/routers'
-import { getUrlWithParams } from '@/utils'
 import type { TabsMenuProps, TabsState } from '@/stores/interface'
 import piniaPersistConfig from '@/stores/helper/persist'
 

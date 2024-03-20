@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import CollapseIcon from './components/CollapseIcon.vue'
-import Breadcrumb from './components/Breadcrumb.vue'
 import { useGlobalStore } from '@/stores/modules/global'
 
 const globalStore = useGlobalStore()

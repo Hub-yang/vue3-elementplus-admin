@@ -1,8 +1,6 @@
 <script setup lang="ts" name="ImportExcel">
-import { ref } from 'vue'
 import { Download } from '@element-plus/icons-vue'
-import type { UploadRawFile, UploadRequestOptions } from 'element-plus'
-import { ElNotification } from 'element-plus'
+import { ElNotification, type UploadRawFile, type UploadRequestOptions } from 'element-plus'
 import { useDownload } from '@/hooks/useDownload'
 
 export interface ExcelParameterProps {
@@ -156,5 +154,7 @@ defineExpose({
 </template>
 
 <style lang="scss" scoped>
-@import "./index.scss";
+.upload {
+  width: 80%;
+}
 </style>
