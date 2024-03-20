@@ -1,35 +1,22 @@
 import { createApp } from 'vue'
-// reset style sheet
-import '@/styles/reset.scss'
-// CSS common style sheet
-import '@/styles/common.scss'
-// iconfont css
-import '@/assets/iconfont/iconfont.scss'
-// font css
-import '@/assets/fonts/font.scss'
+import '@/styles/index.scss'
 // element css
 import 'element-plus/dist/index.css'
 // element dark css
 import 'element-plus/theme-chalk/dark/css-vars.css'
-// custom element dark css
-import '@/styles/element-dark.scss'
-// custom element css
-import '@/styles/element.scss'
 // svg icons
 import 'virtual:svg-icons-register'
 // element plus
 import ElementPlus from 'element-plus'
 // element icons
 import * as Icons from '@element-plus/icons-vue'
-// custom directives
 import App from './App.vue'
+// custom directives
 import directives from '@/directives/index'
 // vue Router
 import router from '@/routers'
 // pinia store
 import pinia from '@/stores'
-// errorHandler
-import errorHandler from '@/utils/errorHandler'
 
 const app = createApp(App)
 
